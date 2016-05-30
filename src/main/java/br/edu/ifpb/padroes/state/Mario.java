@@ -14,7 +14,7 @@ public class Mario {
     private     MarioState estadoAtual;
     
     public Mario(){
-        this.estadoAtual = new MarioPequeno();
+        this.estadoAtual = MarioStateEnum.PEQUENO;
     }
     
     public void levarDano(){
