@@ -13,6 +13,10 @@ public class Mario {
     
     private     MarioState estadoAtual;
     
+    public Mario(){
+        this.estadoAtual = new MarioPequeno();
+    }
+    
     public void levarDano(){
         this.estadoAtual = estadoAtual.levarDano();
     }   
