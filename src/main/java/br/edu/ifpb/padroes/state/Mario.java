@@ -11,42 +11,21 @@ package br.edu.ifpb.padroes.state;
  */
 public class Mario {
     
-    private enum EstadoMario{
-        PEQUENO, GRANDE, FLOR, PENA;
-    }
-    
-    private EstadoMario estadoAtual;
+    private     MarioState estadoAtual;
     
     public void levarDano(){
-        if(estadoAtual == EstadoMario.PEQUENO){
-            System.out.println("Game Over");
-            return;
-        }
-         if(estadoAtual == EstadoMario.GRANDE){
-            System.out.println("Mario oltou ao estado Pequeno");
-            this.estadoAtual = EstadoMario.PEQUENO;
-        }
-        
-         if(estadoAtual == EstadoMario.FLOR){
-             System.out.println("Mario oltou ao estado Grande");
-             this.estadoAtual = EstadoMario.GRANDE;
-         }
-         
-         if(estadoAtual == EstadoMario.PENA){
-             System.out.println("Mario oltou ao estado Flor");
-             this.estadoAtual = EstadoMario.FLOR;
-         }
+        this.estadoAtual = estadoAtual.levarDano();
     }   
     
     public void pegarCogumelo(){
-        
+        this.estadoAtual = estadoAtual.pegarCogumelo();
     }
     
     public void pegarFlor(){
-        
+        this.estadoAtual = estadoAtual.pegaFlor();
     }
     
     public void pegarPena(){
-        
+        this.estadoAtual = estadoAtual.pegarPena();
     }
 }
